@@ -217,6 +217,7 @@ DIST          = ../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/spec_post.prf \
+		../vending_machine/.qmake.stash \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -410,6 +411,7 @@ Makefile: ../vending_machine/vending_machine.pro ../../../qt_5.15.2/5.15.2/gcc_6
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -592,6 +594,7 @@ Makefile: ../vending_machine/vending_machine.pro ../../../qt_5.15.2/5.15.2/gcc_6
 ../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/qt_config.prf:
 ../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/toolchain.prf:
 ../../../qt_5.15.2/5.15.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -1020,7 +1023,37 @@ mainwindow.o: ../vending_machine/mainwindow.cpp ../vending_machine/mainwindow.h 
 		../../../qt_5.15.2/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../qt_5.15.2/5.15.2/gcc_64/include/QtGui/qicon.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtCore/QVariant \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/QApplication \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtCore/qeventloop.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtGui/qinputmethod.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/QGridLayout \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/QLCDNumber \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qlcdnumber.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/QMenuBar \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qmenu.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qaction.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/QStatusBar \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtWidgets/QWidget \
+		../../../qt_5.15.2/5.15.2/gcc_64/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../vending_machine/mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

@@ -11,11 +11,14 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -24,14 +27,19 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
+    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_3;
     QLCDNumber *lcdNumber;
-    QPushButton *pb10;
-    QPushButton *pb500;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout;
     QPushButton *pb100;
+    QPushButton *pb500;
     QPushButton *pb50;
+    QPushButton *pb10;
+    QVBoxLayout *verticalLayout_2;
     QPushButton *pbCoffee;
-    QPushButton *pbMilk;
     QPushButton *pbTea;
+    QPushButton *pbMilk;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -42,30 +50,68 @@ public:
         MainWindow->resize(800, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        gridLayout = new QGridLayout(centralwidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         lcdNumber = new QLCDNumber(centralwidget);
         lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
-        lcdNumber->setGeometry(QRect(250, 110, 191, 121));
-        pb10 = new QPushButton(centralwidget);
-        pb10->setObjectName(QString::fromUtf8("pb10"));
-        pb10->setGeometry(QRect(180, 270, 89, 25));
-        pb500 = new QPushButton(centralwidget);
-        pb500->setObjectName(QString::fromUtf8("pb500"));
-        pb500->setGeometry(QRect(240, 390, 89, 25));
+
+        verticalLayout_3->addWidget(lcdNumber);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         pb100 = new QPushButton(centralwidget);
         pb100->setObjectName(QString::fromUtf8("pb100"));
-        pb100->setGeometry(QRect(280, 330, 89, 25));
+
+        verticalLayout->addWidget(pb100);
+
+        pb500 = new QPushButton(centralwidget);
+        pb500->setObjectName(QString::fromUtf8("pb500"));
+
+        verticalLayout->addWidget(pb500);
+
         pb50 = new QPushButton(centralwidget);
         pb50->setObjectName(QString::fromUtf8("pb50"));
-        pb50->setGeometry(QRect(230, 300, 89, 25));
+
+        verticalLayout->addWidget(pb50);
+
+        pb10 = new QPushButton(centralwidget);
+        pb10->setObjectName(QString::fromUtf8("pb10"));
+
+        verticalLayout->addWidget(pb10);
+
+
+        horizontalLayout->addLayout(verticalLayout);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         pbCoffee = new QPushButton(centralwidget);
         pbCoffee->setObjectName(QString::fromUtf8("pbCoffee"));
-        pbCoffee->setGeometry(QRect(440, 270, 89, 25));
-        pbMilk = new QPushButton(centralwidget);
-        pbMilk->setObjectName(QString::fromUtf8("pbMilk"));
-        pbMilk->setGeometry(QRect(440, 340, 89, 25));
+
+        verticalLayout_2->addWidget(pbCoffee);
+
         pbTea = new QPushButton(centralwidget);
         pbTea->setObjectName(QString::fromUtf8("pbTea"));
-        pbTea->setGeometry(QRect(460, 300, 89, 25));
+
+        verticalLayout_2->addWidget(pbTea);
+
+        pbMilk = new QPushButton(centralwidget);
+        pbMilk->setObjectName(QString::fromUtf8("pbMilk"));
+
+        verticalLayout_2->addWidget(pbMilk);
+
+
+        horizontalLayout->addLayout(verticalLayout_2);
+
+
+        verticalLayout_3->addLayout(horizontalLayout);
+
+
+        gridLayout->addLayout(verticalLayout_3, 0, 0, 1, 1);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -83,13 +129,13 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        pb10->setText(QCoreApplication::translate("MainWindow", "10", nullptr));
-        pb500->setText(QCoreApplication::translate("MainWindow", "500", nullptr));
         pb100->setText(QCoreApplication::translate("MainWindow", "100", nullptr));
+        pb500->setText(QCoreApplication::translate("MainWindow", "500", nullptr));
         pb50->setText(QCoreApplication::translate("MainWindow", "50", nullptr));
+        pb10->setText(QCoreApplication::translate("MainWindow", "10", nullptr));
         pbCoffee->setText(QCoreApplication::translate("MainWindow", "Coffee(100)", nullptr));
-        pbMilk->setText(QCoreApplication::translate("MainWindow", "Milk(200)", nullptr));
         pbTea->setText(QCoreApplication::translate("MainWindow", "Tea(150)", nullptr));
+        pbMilk->setText(QCoreApplication::translate("MainWindow", "Milk(200)", nullptr));
     } // retranslateUi
 
 };

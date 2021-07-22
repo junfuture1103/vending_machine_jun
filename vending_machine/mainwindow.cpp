@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QString>
+#include <QThread>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,8 +16,14 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::changeMoney(int diff){
-    money_+=diff;
-    ui->lcdNumber->display(money_);
+    int tmp = money_ + diff;
+    if (tmp >= 0){
+        money_+=diff;
+        ui->lcdNumber->display(money_);
+    }else{
+        QString err_text = ("err");
+        ui->lcdNumber->display(err_text);
+    }
 }
 
 void MainWindow::on_pb10_clicked()
