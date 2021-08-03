@@ -16,6 +16,8 @@ public:
     ~MainWindow();
     int money_{0};
     void changeMoney(int diff);
+    void returnMoney();
+    void setButtonState(int money);
 
 private slots:
     void on_pb10_clicked();
@@ -31,6 +33,8 @@ private slots:
     void on_pbTea_clicked();
 
     void on_pbMilk_clicked();
+
+    void on_pbReturn_clicked();
 
 private:
     Ui::MainWindow *ui;
