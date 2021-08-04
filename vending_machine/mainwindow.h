@@ -36,6 +36,10 @@ private slots:
 
     void on_pbReturn_clicked();
 
+    void on_label_linkActivated(const QString &link);
+
+    void on_label_objectNameChanged(const QString &objectName);
+
 private:
     Ui::MainWindow *ui;
 };

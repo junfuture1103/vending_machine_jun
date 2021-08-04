@@ -16,6 +16,8 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::setButtonState(int money){
+    ui->label->setText("hi this is jun vending machine!!");
+
     if (money >= 100){
         ui->pbCoffee->setEnabled(true);
         if(money >= 150){
@@ -60,21 +62,23 @@ void MainWindow::returnMoney()
 
     int tmp = money_;
 
-    moneyCount500 = tmp % 500;
-    tmp = tmp - moneyCount500*500;
+    moneyCount500 = tmp / 500;
+    tmp = tmp%500;
 
-    moneyCount100 = tmp % 100;
-    tmp = tmp - moneyCount100*100;
+    moneyCount100 = tmp / 100;
+    tmp = tmp%100;
 
-    moneyCount50 = tmp % 50;
-    tmp = tmp - moneyCount50*50;
+    moneyCount50 = tmp / 50;
+    tmp = tmp%50;
 
-    moneyCount10 = tmp % 10;
+    moneyCount10 = tmp / 10;
+
+    printf("Debug: %d\n", moneyCount10);
 
     money_ = 0;
     ui->lcdNumber->display(money_);
     setButtonState(money_);
-
+    ui->label->setText("500 : "+QString::number(moneyCount500)+" 100 : "+QString::number(moneyCount100)+" 50 : "+QString::number(moneyCount50)+" 10 : "+QString::number(moneyCount10));
 }
 
 
@@ -124,4 +128,3 @@ void MainWindow::on_pbReturn_clicked()
 {
     returnMoney();
 }
-
